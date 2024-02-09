@@ -1,0 +1,12 @@
+
+<app-navbar *ngIf="!custAuth;"></app-navbar>
+<app-cust-navbar *ngIf="custAuth;"></app-cust-navbar>
+
+<!-- <ng-container *ngIf="authenticated; else loginButton"></ng-container> -->
+
+<div class="under-nav"></div>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
+

@@ -1,0 +1,33 @@
+<div class="login-page">
+  <!-- Start body-content -->
+  <div class="container">
+    <div class="form-content">
+      <div class="title_form-content text-center mt-20 f-b">
+        <h4 class="f-b">رمز تنشيط الحساب</h4>
+        <div class="grey-color">
+          <span class="main-color">رمز تنشيط الحساب</span>
+        </div>
+      </div>
+
+      <form action="" method="post">
+
+        <div class="form-group ">
+          <label>
+            رمز التنشيط
+          </label>
+          <input type="number" min="0" name="activation_code" class="form-control" placeholder="ادخل رمز التنشيط">
+          <div class="mt-2 mb-2" style="float: left">
+          </div>
+        </div>
+        <button class="btn-main form-group" type="submit">تأكيد الرمز</button>
+      </form>
+      <div class="justify-content-center d-flex">
+        <form action="" method="post">
+          <input type="hidden" name="id" value="user->id">
+
+          <button class="forget d-block grey-color form-group" type="submit">إعادة إرسال الرمز مرة أخرى</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

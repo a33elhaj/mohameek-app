@@ -1,0 +1,27 @@
+// img {
+//   // border-radius: 15px;
+// }
+
+.arrow-card .icon-arrow-right,
+.arrow-card .icon-arrow-left {
+  position: absolute;
+  top: 50%;
+  background: #1d648f;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+
+}
+
+.arrow-card .icon-arrow-right {
+  right: 0;
+  margin-right: -20px;
+
+}
+
+.arrow-card .icon-arrow-left {
+  left: 0;
+  margin-left: -20px;
+
+}

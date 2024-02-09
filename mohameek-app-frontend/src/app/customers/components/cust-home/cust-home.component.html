@@ -1,0 +1,48 @@
+<!-- <div>
+  <div class="messages">
+    <h4>chat</h4>
+    <div class="message" *ngFor="let message of messages">
+      <div class="pic">
+        <img src="/assets/man.svg" alt="profile-img">
+      </div>
+      <div class="message-text">
+        <span>{{message.name}}</span>
+        <p>{{message.text}}</p>
+      </div>
+    </div>
+  </div>
+  <app-cust-chat></app-cust-chat>
+</div> -->
+
+<div class="body-content">
+<p>{{welcome}}</p>
+  <div class="sec-marg">
+    <div class="container">
+      <div class="body_chat p-15">
+        <div class="chat-content over_scroll_chat height_chat chats">
+          <div class="sent_chat content_sent">
+            <img id="sender_image" src="/assets/images/new-customer-icon.png">
+            <div class="sent">
+
+              <div class="message" *ngFor="let message of messages">
+                <p>{{message.text}} </p>
+              </div>
+              <!-- end of if -->
+              <div class="d-flex justify-content-end">
+                <span class="font_12 M_H_10">dateTime</span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="writ_massage d-flex">
+          <app-cust-chat></app-cust-chat>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

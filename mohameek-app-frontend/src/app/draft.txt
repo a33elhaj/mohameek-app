@@ -1,0 +1,74 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LandingComponent } from './components/landing/landing.component';
+import { UserHomeComponent } from './user/components/user-home/user-home.component';
+import { SigninComponent } from './user/components/signin/signin.component';
+import { SignupComponent } from './user/components/signup/signup.component';
+import { UserProfileComponent } from './user/components/user-profile/user-profile.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: SigninComponent },
+  { path: 'register', component: SignupComponent },
+  { path: 'profile', component: UserProfileComponent },
+  // {
+  //   path: 'user',
+  //   loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+  // },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule),
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+
+
+
+<mat-toolbar color="primary">
+  Mohameek.net App
+  <!-- <ng-container *ngIf="user$ | async as user; else loginButton"> -->
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      <img
+        width="30"
+        height="30"
+        class="profile-image-toolbar"
+        src='assets/images/image-placeholder.png'
+      />
+
+      <mat-icon>expand_more</mat-icon>
+    </button>
+  <!-- </ng-container> -->
+
+  <ng-template #loginButton>
+    <button mat-button routerLink="login">
+      <mat-icon>login</mat-icon>
+      Login
+    </button>
+  </ng-template>
+</mat-toolbar>
+
+<div class="content">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon>account_circle</mat-icon>
+    Profile
+  </button>
+  <button mat-menu-item (click)="signOut()">
+    <mat-icon>logout</mat-icon>
+    Logout
+  </button>
+</mat-menu>
+
+
+

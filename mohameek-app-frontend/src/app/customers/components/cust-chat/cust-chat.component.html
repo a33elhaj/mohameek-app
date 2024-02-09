@@ -1,0 +1,12 @@
+<form class="form d-flex flex-grow-1" (submit)="sendMessage()" name="messageForm" #messageForm="ngForm">
+
+  <button data-feather="send" type="submit">
+    إرسل
+  </button>
+
+  <div>
+
+    <input class="form-control input-custom-size" type="text" placeholder="أكتب رسالتك هنا" name="message" id="message"
+      [(ngModel)]="message.text">
+  </div>
+</form>

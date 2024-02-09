@@ -1,0 +1,58 @@
+<mat-toolbar color="primary">
+  <div class="app-logo">
+    <img src="assets/images/mohameek-logo.png" alt="">
+    محاميك
+  </div>
+  <ng-container *ngIf="authenticated; else loginButton">
+    <ul>
+
+      <button routerLink="/cust-home" mat-button>
+        cust-home
+        <mat-icon>home</mat-icon>
+      </button>
+      <button mat-button>
+        قضاياي
+        <mat-icon>card_travel</mat-icon>
+      </button>
+      <button mat-button>
+        المحادثات
+        <mat-icon>question_answer</mat-icon>
+      </button>
+      <button mat-button>
+        الإشعارات
+        <mat-icon>notifications</mat-icon>
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="userMenu">
+        <img width="30" height="30" class="profile-image-toolbar" src='assets/images/image-placeholder.png' />
+        <mat-icon>expand_more</mat-icon>
+      </button>
+    </ul>
+  </ng-container>
+
+  <ng-template #loginButton>
+    <ul>
+      <button mat-button routerLink="/sign-in">
+        <img class="img-icon" src="assets/images/new-lawyer-icon.png" alt="">
+        الدخول كمحامي
+      </button>
+      <button mat-button routerLink="/cust-sign-in">
+        <img class="img-icon" src="assets/images/new-customer-icon.png" alt="">
+        الدخول كعميل
+      </button>
+    </ul>
+  </ng-template>
+
+</mat-toolbar>
+
+
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item routerLink="/user-profile">
+    <a>الملف الشخصي</a>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <a>تسجيل الخروج</a>
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
+</mat-menu>
